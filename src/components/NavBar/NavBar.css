@@ -18,14 +18,15 @@ h1{
 ul{
     list-style-type: none;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    padding: 50px;
-    justify-content: space-evenly;
+    padding: 20px;
+    justify-content: space-around;
     background-color:slategrey;
     border-radius: 20px;
     border: 3px solid black;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 ul li{
     font-family: 'Shadows Into Light';
@@ -33,6 +34,8 @@ ul li{
     font-size: 3rem;
     color:coral;
     text-shadow: 2px 2px black;
-
-
 }
+li:hover{
+    color: white;
+}
+
