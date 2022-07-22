@@ -11,11 +11,11 @@ function App() {
       <div>
         
       </div>
-      <div>
-        <ItemListContainer price="2200" image={"gokuUI.jpg"} />
-        <ItemListContainer price="2350" image={"homeroPastelito.jpg"} />
-        <ItemListContainer price="2420" image={"ikki.jpg"} />
-        <ItemListContainer price="2200" image={"charizard.jfif"} />
+      <div className="ItemOrder">
+        <ItemListContainer price="2200" image={"gokuUI.jpg"} stock={15} />
+        <ItemListContainer price="2350" image={"homeroPastelito.jpg"} stock={10} />
+        <ItemListContainer price="2420" image={"ikki.jpg"} stock={12} />
+        <ItemListContainer price="2200" image={"charizard.jfif"} stock={8} />
       </div>
     </div>
   );
