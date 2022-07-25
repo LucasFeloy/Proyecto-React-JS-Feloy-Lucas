@@ -1,33 +1,33 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import ItemCount from "../ItemCount/ItemCount";
+import products from "../../utils/products.Mock";
 import "./ItemListContainer.css";
+import ItemList from "../ItemList/ItemList";
 
 
 const ItemListContainer = ({ price, image, stock }) => {
-    const [contador, setContador] = useState(1);
 
-    const addNumber = () => {
-        if (contador < stock) {
-            setContador(contador + 1)
+    const [listProducts,setlistProducts]=useState([])
 
-        } else { document.getElementById("stockAlert").innerText = "Cantidad máxima de stock" }
-    }
+    const getProducts=new Promise((resolve,reject)=>{
 
-    const substractNumber = () => {
-        if (contador > 1) {
-            setContador(contador - 1)
-        };
-    }
+        setTimeout(()=>{resolve(products)},2000)
+        
+    })
 
+    useEffect(()=>{
+        getProducts
+        .then((res)=>{
+            setlistProducts(res)
+        })
+    },[])
+
+   
     return (
         <div className="ItemList">
-            <img src={`assets/${image}`} alt="Imagen" />
-            <p>${price}</p>
-            <div className="itemCounter">
-                <button onClick={substractNumber}>-</button>
-                <p>{contador}</p>
-                <button onClick={addNumber}>+</button>
-                <p id="stockAlert"></p>
-            </div>
+            <ItemList dataProducts={listProducts}/>
+          
+            <ItemCount stock={stock}/>
             <button>Comprar</button>
 
         </div>
