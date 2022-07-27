@@ -1,4 +1,4 @@
-const listProducts=[{
+const Products=[{
     id:1,
     title: "Remera Charizard",
     price: 2125,
@@ -10,7 +10,7 @@ const listProducts=[{
     title: "Remera Ikki",
     price: 2200,
     stock: 14,
-    image: "ikki.jpg"
+    image: 'ikki.jpg'
 },
 {
     id:3,
@@ -27,3 +27,5 @@ const listProducts=[{
     image:"gokuUi.jpg"
 },
 ]
+
+export default Products;

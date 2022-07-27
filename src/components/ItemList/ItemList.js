@@ -1,11 +1,24 @@
-import ItemListContainer from "../ItemListContainer/ItemListContainer";
+import ItemCount from "../ItemCount/ItemCount";
+
 
 const ItemList = ({ dataProducts }) => {
     return(
-    <>
-    <img src={dataProducts.image} alt="imagen"/>
-    <p key={dataProducts.id}>{dataProducts.price}</p>
-    </>
+        <>
+        {dataProducts.map((product)=>{
+           
+            return(
+             
+                < >
+                <img src={`assets/${product.image}`} alt="imagen"/>
+                <span>{product.title}</span>
+                <p key={product.id}>{product.price}</p>
+                <ItemCount stock={product.stock}/>
+                <button>Comprar</button>
+                </>
+            )
+        })}
+        </>
+  
     )
 }
 
