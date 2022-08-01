@@ -11,7 +11,7 @@ h1{
     font-size: 5rem;
     padding: 50px;
     font-weight: bold;
-    text-shadow: 2px 2px whitesmoke ;
+    text-shadow: 2px 5px whitesmoke ;
 
 }
 
@@ -27,6 +27,7 @@ ul{
     border: 3px solid black;
     margin-left: 100px;
     margin-right: 100px;
+   
 }
 ul li{
     font-family: 'Shadows Into Light';
@@ -34,8 +35,11 @@ ul li{
     font-size: 3rem;
     color:coral;
     text-shadow: 2px 2px black;
+  
 }
 li:hover{
     color: white;
+    
 }
+
 

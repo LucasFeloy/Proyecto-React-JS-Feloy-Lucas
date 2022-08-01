@@ -1,0 +1,13 @@
+.Inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Inicio img{
+    width: 75%;
+    height: 75%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0px 8px 8px 0px black;
+    margin-bottom: 100px;
+}

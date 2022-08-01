@@ -5,6 +5,7 @@ const productDetail = [{
     price: 2200,
     stock: 14,
     image: 'ikki.jpg'
+    
 }]
 
 export default productDetail;

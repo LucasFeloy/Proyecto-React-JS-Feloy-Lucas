@@ -1,33 +1,31 @@
 import "./ItemDetailContainer.css";
-import ItemCount from "../ItemCount/ItemCount";
+import Products from "../../utils/products.Mock"
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { useEffect,useState } from "react";
 
+const ItemDetailContainer = () => {
 
-const ItemDetailContainer = ({detailProduct}) => {
-    return(
-        <>
-        {detailProduct.map((item)=>{
-           
-            return(
-             
-                < >
-                <img src={`assets/${item.image}`} alt="imagen"/>
-                <div className="Detail">
-                <span>{item.title}</span>
-                <p key={item.id}>${item.price}</p>
-                <button>XL</button>
-                <button>L</button>
-                <button>M</button>
-                <button>S</button>
-                <button>XS</button>
-                <ItemCount stock={item.stock}/>
-                <button>Comprar</button>
-                </div>
-                </>
-            )
-        })}
-        </>
-  
-    )
-}
+    const [productDetail, setProductDetail]=useState([])
+
+        const getProductDetail=new Promise((resolve,reject)=>{
+    
+            setTimeout(()=>{resolve(Products)},2000)
+            
+        })
+    
+        useEffect(()=>{
+            getProductDetail
+            .then((res)=>{
+                setProductDetail(res)
+                
+            })
+        },[])
+
+        return(
+            <ItemDetail detail={productDetail}/>
+        )
+        }
+   
+
 
 export default ItemDetailContainer;

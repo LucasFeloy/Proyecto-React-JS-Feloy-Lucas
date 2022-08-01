@@ -14,10 +14,10 @@ const Products=[{
 },
 {
     id:3,
-    title: "Remera Homero",
+    title: "Remera Eva",
     price: 2050,
     stock: 10,
-    image:"homeroPastelito.jpg"
+    image:"remeraEva.webp"
 },
 {
     id:4,
