@@ -1,31 +1,33 @@
 import "./ItemDetailContainer.css";
 import Products from "../../utils/products.Mock"
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
-    const [productDetail, setProductDetail]=useState([])
+    const [productDetail, setProductDetail] = useState({})
 
-        const getProductDetail=new Promise((resolve,reject)=>{
-    
-            setTimeout(()=>{resolve(Products)},2000)
-            
+    const { id } = useParams()
+
+    const filterById = () => {
+        Products.some((product) => {
+            if (product.id == id) {
+                setProductDetail(productDetail)
+                }
         })
-    
-        useEffect(()=>{
-            getProductDetail
-            .then((res)=>{
-                setProductDetail(res)
-                
-            })
-        },[])
+    }
 
-        return(
-            <ItemDetail detail={productDetail}/>
-        )
-        }
-   
+    useEffect(() => {
+        filterById()
+    }, [])
+
+
+    return (
+        <ItemDetail detail={productDetail} />
+    )
+}
+
 
 
 export default ItemDetailContainer;

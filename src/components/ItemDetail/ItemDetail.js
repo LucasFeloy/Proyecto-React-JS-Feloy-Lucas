@@ -1,32 +1,30 @@
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css';
 
-const ItemDetail=({detail})=>{
-   
-    return(
-        <>
-        {detail.map((item)=>{
-           
-            return(
-             
-                <div className="ItemDetail" >
-                <img src={`assets/${item.image}`} alt="imagen"/>
-                <div className="Detail">
-                <span>{item.title}</span>
-                <p key={item.id}>${item.price}</p>
+const ItemDetail = ({ data }) => {
+
+    return (
+
+
+
+        <div className="ItemDetail" >
+            <img src={`assets/${data.image}`} alt="imagen" />
+            <div className="Detail">
+                <span>{data.title}</span>
+                <p key={data.id}>${data.price}</p>
                 <button>XL</button>
                 <button>L</button>
                 <button>M</button>
                 <button>S</button>
                 <button>XS</button>
-                <ItemCount stock={item.stock}/>
+                <ItemCount stock={data.stock} />
                 <button>Comprar</button>
-                </div>
-                </div>
-            )
-        })}
-        </>
-  
+            </div>
+        </div>
+
+
+
+
     )
 }
 

@@ -35,6 +35,7 @@ ul li{
     font-size: 3rem;
     color:coral;
     text-shadow: 2px 2px black;
+    text-decoration: none;
   
 }
 li:hover{

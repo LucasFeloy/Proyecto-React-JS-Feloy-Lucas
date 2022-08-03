@@ -9,7 +9,7 @@ const ItemList = ({ dataProducts }) => {
                 return (
 
                     <div className="ItemCard" >
-                        <Link to="/remeras/detalle"><img src={`assets/${product.image}`} alt="imagen" /></Link>
+                        <Link to={`/remeras/detalle/${product.id}`}><img src={`assets/${product.image}`} alt="imagen" /></Link>
                         <span>{product.title}</span>
                         <p key={product.id}>${product.price}</p>
                         <ItemCount stock={product.stock} />
