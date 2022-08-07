@@ -9,10 +9,11 @@ h1{
     font-family:'Comforter' ;
     text-align: center;
     font-size: 5rem;
-    padding: 50px;
+    padding: 30px;
     font-weight: bold;
     text-shadow: 2px 5px whitesmoke ;
-
+    text-decoration: none;
+    text-decoration-line: none;
 }
 
 ul{
@@ -22,11 +23,11 @@ ul{
     justify-content: center;
     padding: 20px;
     justify-content: space-around;
-    background-color:slategrey;
+    background-color:rgb(112, 128, 144);
     border-radius: 20px;
     border: 3px solid black;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
    
 }
 ul li{

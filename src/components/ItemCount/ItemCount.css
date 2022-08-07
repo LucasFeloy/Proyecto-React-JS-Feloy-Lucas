@@ -1,5 +1,5 @@
 .itemCounter {
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +9,7 @@
 .itemCounter button{
     width: 20%;
     margin: auto;
-   
+       
 }
 
 

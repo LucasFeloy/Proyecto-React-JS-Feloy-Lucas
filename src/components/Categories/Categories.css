@@ -1,4 +1,4 @@
-.ItemCard{
+.Category{
     display: flex;
     flex-direction: column;
     border: solid 5px black;
@@ -6,5 +6,4 @@
     padding: 10px;
     border-radius: 20px;
 }
-
 

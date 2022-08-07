@@ -1,9 +1,9 @@
 import { useState } from "react";
 import './ItemCount.css';
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({ stock,quantitySelected }) => {
 
-    const [contador, setContador] = useState(1);
+    const [contador, setContador] = useState(0);
 
     const addNumber = () => {
         if (contador < stock) {
@@ -13,18 +13,26 @@ const ItemCount = ({stock}) => {
     }
 
     const substractNumber = () => {
-        if (contador > 1) {
+        if (contador > 0) {
             setContador(contador - 1)
         };
     }
 
+    const onAdd=()=>{
+            quantitySelected(contador)
+    }
+
     return (
-        <div className="itemCounter">
-            <button onClick={substractNumber}>-</button>
-            <p>{contador}</p>
-            <button onClick={addNumber}>+</button>
-            
-        </div>
+        <>
+            <div className="itemCounter">
+                <button onClick={substractNumber}>-</button>
+                <p>{contador}</p>
+                <button onClick={addNumber}>+</button>
+            </div>
+            <div className="Agregar">
+                <button onClick={onAdd}>AGREGAR</button>
+            </div>
+        </>
     )
 }
 

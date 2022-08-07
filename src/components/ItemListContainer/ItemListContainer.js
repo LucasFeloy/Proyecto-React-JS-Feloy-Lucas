@@ -1,35 +1,41 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Products from "../../utils/products.Mock";
 import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList";
-import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+
+
+
+
 
 
 const ItemListContainer = () => {
 
-    const [listProducts,setlistProducts]=useState([])
+    const [listProducts, setlistProducts] = useState([])
 
-    const getProducts=new Promise((resolve,reject)=>{
+    const getProducts = new Promise((resolve, reject) => {
 
-        setTimeout(()=>{resolve(Products)},2000)
-        
+        setTimeout(() => { resolve(Products) }, 2000)
+
     })
 
-    useEffect(()=>{
+    useEffect(() => {
         getProducts
-        .then((res)=>{
-            setlistProducts(res)
-        })
-    },[])
+            .then((res) => {
+                setlistProducts(res)
 
-    
 
-    
+            })
+    }, [])
+
+
    
     return (
+
+        
         <div className="ItemList">
-            <ItemList dataProducts={listProducts}/>
-                           
+            <ItemList dataProducts={listProducts} />
+                   
+
         </div>
     )
 

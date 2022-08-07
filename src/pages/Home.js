@@ -1,9 +1,9 @@
-import Logo from "../components/Logo/Logo"
+import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
 
 
 const Home=()=>{
     return(
-        <Logo/>
+        <ItemListContainer/>
     )
 }
 

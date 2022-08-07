@@ -9,11 +9,13 @@ const ItemDetailContainer = () => {
     const [productDetail, setProductDetail] = useState({})
 
     const { id } = useParams()
+    
 
     const filterById = () => {
         Products.some((product) => {
             if (product.id == id) {
                 setProductDetail(product)
+                console.log(productDetail)
             }
         })
     }

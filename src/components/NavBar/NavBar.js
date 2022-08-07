@@ -1,17 +1,26 @@
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 import {Link} from "react-router-dom";
+import Products from '../../utils/products.Mock';
+
 
 
 function NavBar(){
-    return(
+   
+
+const categories=Products.map((e)=>e.category)
+
+     return(
+        
         <div>
-            
+            <Link to='/'><h1>FRIKI-REMERAS</h1></Link>
             <ul>
-                <Link to="/"><li>INICIO</li></Link>
-                <Link to="/remeras"><li>REMERAS</li></Link>
+                <Link to="/"><li>REMERAS</li></Link>
+                <Link to={`/category/${categories[5]}`}><li>SIMPSONS</li></Link>
+                <Link to={`/category/${categories[0]}`}><li>ANIME</li></Link>
+                <Link to={`/category/${categories[6]}`}><li>STAR WARS</li></Link>
+                <Link to={`/category/${categories[4]}`}><li>SERIES</li></Link>
                 <li>GUIA DE TALLES</li>
-                <li>CONTACTO</li>
                 <li><CartWidget/></li>
             </ul>
           

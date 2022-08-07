@@ -1,5 +1,4 @@
-
-.ItemList{
+.Categories{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -15,7 +14,7 @@
 
   
 }
-.ItemList img{
+.Categories img{
     width: 250px;
     height: 300px;
     box-shadow: 0px 8px 8px 0px black;
@@ -23,7 +22,7 @@
     border-radius: 20px;
     
 }
-.ItemList button{
+.Categories button{
     font-weight: bold;
     border:solid 2px black;
     border-radius: 15px;
@@ -32,6 +31,7 @@
     font-family:'Trebuchet MS';
     font-size: 1.8rem;
 }
+
 
 
 
