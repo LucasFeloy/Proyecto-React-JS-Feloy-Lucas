@@ -22,7 +22,7 @@ const ItemDetail = ({ detail }) => {
                     <button>S</button>
                     <button>XS</button>
                 </div>
-                {quantitySelected > 0 ? <button>TERMINAR COMPRA</button> : <ItemCount stock={detail.stock} quantitySelected={setQuantitySelected} />}
+                {quantitySelected > 0 ? <button>TERMINAR COMPRA</button> : <ItemCount stock={detail.stock} quantitySelected={setQuantitySelected} detail={detail} />}
 
 
             </div>

@@ -10,12 +10,14 @@ const ItemList = ({ dataProducts }) => {
 
                     <div className="ItemCard" >
                         <Link to={`/item/${product.id}`}><img src={`assets/${product.image}`} alt="imagen" /></Link>
-                        <div>
-                        <span>{product.title}</span>
-                        <p key={product.id}>${product.price}</p>
-                        <ItemCount stock={product.stock} />
-                        
+                        <div className="ItemCard-p">
+                            <span>{product.title}</span>
+                            <p key={product.id}>${product.price}</p>
                         </div>
+                        <div>
+                            <ItemCount stock={product.stock} />
+                        </div>
+
                     </div>
                 )
             })}

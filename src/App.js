@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import DetailProduct from './pages/DetailProduct';
 import CategoriesContainer from './components/CategoriesContainer/CategoriesContainer';
+import CartProvider from './context/CartContext';
+import CartProducts from './components/CartWidget/CartProducts';
 
 
 
@@ -12,17 +14,20 @@ import CategoriesContainer from './components/CategoriesContainer/CategoriesCont
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
-      
+
       <NavBar />
-      
+
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/item/:id' element={<DetailProduct/>}/>
-        <Route path='/category/:id' element={<CategoriesContainer/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/item/:id' element={<DetailProduct />} />
+        <Route path='/category/:id' element={<CategoriesContainer />} />
+        <Route path='/CartWidget/CartProducts' element={<CartProducts/>}/>
       </Routes>
 
     </BrowserRouter>
+    </CartProvider>
 
   );
 }

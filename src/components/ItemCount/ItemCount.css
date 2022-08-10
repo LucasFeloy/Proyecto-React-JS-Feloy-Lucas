@@ -1,15 +1,25 @@
 .itemCounter {
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    
+    font-family: 'Mouse Memoirs', sans-serif;
+    color: orangered;
+    text-shadow: 1px 4px black;
 }
 
-.itemCounter button{
+.itemCounter button {
     width: 20%;
     margin: auto;
-       
+    font-family: 'Mouse Memoirs', sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    
+
 }
 
-
+.Agregar {
+    font-family: 'Mouse Memoirs', sans-serif;
+    padding: 20px;
+    cursor: pointer;
+}

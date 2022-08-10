@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         Products.some((product) => {
             if (product.id == id) {
                 setProductDetail(product)
-                console.log(productDetail)
+                
             }
         })
     }

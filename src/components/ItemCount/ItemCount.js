@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import './ItemCount.css';
+import { CartContext } from "../../context/CartContext";
 
-const ItemCount = ({ stock,quantitySelected }) => {
+const ItemCount = ({ stock, quantitySelected, detail }) => {
 
+    const { addToCart } = useContext(CartContext)
     const [contador, setContador] = useState(0);
 
     const addNumber = () => {
@@ -18,21 +20,23 @@ const ItemCount = ({ stock,quantitySelected }) => {
         };
     }
 
-    const onAdd=()=>{
-            quantitySelected(contador)
+    const onAdd = () => {
+        quantitySelected(contador)
+        addToCart(detail)
+
     }
 
     return (
-        <>
+        <div>
             <div className="itemCounter">
                 <button onClick={substractNumber}>-</button>
                 <p>{contador}</p>
                 <button onClick={addNumber}>+</button>
             </div>
             <div className="Agregar">
-                <button onClick={onAdd}>AGREGAR</button>
+                <button onClick={onAdd} >AGREGAR</button>
             </div>
-        </>
+        </div>
     )
 }
 

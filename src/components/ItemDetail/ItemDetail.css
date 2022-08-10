@@ -6,10 +6,25 @@
     font-weight: bold;
     font-size: 2.5rem;
     padding: 30px;
-    border: solid 3px black;
+    border: solid 3px orange;
     margin: 50px;
-    border-radius: 20px;
-    border: solid 3px black;
+    
+}
+
+.ItemDetail p {
+    font-family: 'Mouse Memoirs', sans-serif;
+    margin-top: 20px;
+    color: orangered;
+    text-shadow: 1px 4px black;
+    letter-spacing: 1px;
+}
+
+.ItemDetail span {
+    font-family: 'Mouse Memoirs', sans-serif;
+    margin-top: 20px;
+    color: orangered;
+    text-shadow: 1px 4px black;
+    letter-spacing: 1px;
 }
 
 .ItemDetail img {
@@ -19,7 +34,7 @@
     border: 1px solid black;
     border-radius: 20px;
     margin: 20px;
-
+    
 }
 
 .ItemDetail button {
@@ -28,8 +43,9 @@
     border-radius: 15px;
     margin: 5px;
     padding: 20px;
-    font-family: 'Trebuchet MS';
-    font-size: 1.8rem;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
 }
 
 .Detail{

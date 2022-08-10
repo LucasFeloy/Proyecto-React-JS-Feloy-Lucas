@@ -1,12 +1,23 @@
-.carrito{
+.carrito {
     display: flex;
-   
-    
+
+
 }
-.carrito img{
+
+.carrito img {
     width: 50px;
     height: 45px;
-    border: slategray solid 3px;
-    border-radius: 10px;
-    
+
+}
+
+.carrito button {
+    background-color: rgb(123, 173, 233);
+
+    border: 1px solid rgb(123, 173, 233);
+
+}
+
+img:hover {
+    transform: scale(105%);
+    cursor: pointer;
 }
