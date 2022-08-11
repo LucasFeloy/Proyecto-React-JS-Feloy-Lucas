@@ -11,8 +11,7 @@ const ItemCount = ({ stock, quantitySelected, detail }) => {
         if (contador < stock) {
             setContador(contador + 1)
 
-        } else { document.getElementById("stockAlert").innerText = "Cantidad máxima de stock" }
-    }
+        } }
 
     const substractNumber = () => {
         if (contador > 0) {
@@ -33,6 +32,7 @@ const ItemCount = ({ stock, quantitySelected, detail }) => {
                 <p>{contador}</p>
                 <button onClick={addNumber}>+</button>
             </div>
+            <div className="itemCounter">{contador==stock&&<p>¡Límite de Stock!</p>}</div>
             <div className="Agregar">
                 <button onClick={onAdd} >AGREGAR</button>
             </div>

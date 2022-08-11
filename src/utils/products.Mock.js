@@ -50,7 +50,7 @@ const Products=[{
     id:7,
     title: "Remera Star Wars",
     price: 2235,
-    stock: 16,
+    stock: 11,
     image:"logoStarwars.jpg",
     category:'Star Wars'
 },

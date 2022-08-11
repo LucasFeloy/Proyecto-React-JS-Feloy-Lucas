@@ -6,29 +6,30 @@ import "./CategoriesContainer.css";
 
 const CategoriesContainer = () => {
 
-    const [category, setCategory] = useState({})
+    const [category, setCategory] = useState();
 
     const { id } = useParams()
 
 
-    const filterByCategories = () => Products.filter((e) => {
-        if (e.category == id) {
+    const filterByCategories = () => {
+        const filteredProducts = Products.filter((product) => product.category === id);
+        setCategory(filteredProducts);
+    };
 
-            setCategory(e)
-        }
 
 
-    })
 
     useEffect(() => {
         filterByCategories()
-    }, [])
+    }, [id])
 
 
     return (
+        category &&(
         <div className="Categories">
-            <Categories data={category} />
-        </div>
+            {category.map((product) => (<Categories data={product} />))}
+        </div>)
+
     )
 
 
