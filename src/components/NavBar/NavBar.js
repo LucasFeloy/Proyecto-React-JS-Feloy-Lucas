@@ -30,7 +30,7 @@ function NavBar() {
                 <div className='divisor'></div>
                 <li>GUIA DE TALLES</li>
                 <div className='divisor'></div>
-                <li><CartWidget /></li>
+                 <li><CartWidget/></li>
                 {cartProducts.length > 0 ? <li>{cartProducts.length}</li> : <li></li>}
             </ul>
 
