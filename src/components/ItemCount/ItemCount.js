@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import './ItemCount.css';
 import { CartContext } from "../../context/CartContext";
 
+
 const ItemCount = ({ stock, quantitySelected, detail }) => {
 
     const { addToCart, setItemQuantity } = useContext(CartContext)
@@ -10,7 +11,6 @@ const ItemCount = ({ stock, quantitySelected, detail }) => {
     const addNumber = () => {
         if (contador < stock) {
             setContador(contador + 1)
-
         }
     }
 

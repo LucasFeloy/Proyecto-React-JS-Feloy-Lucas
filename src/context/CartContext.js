@@ -1,29 +1,33 @@
-import { createContext, useState } from "react";
+import { createContext, useState,useEffect } from "react";
 
 
 const CartContext = createContext()
 
 const CartProvider = ({ children }) => {
-    
+
     const [cartProducts, setCartProducts] = useState([])
     const [itemQuantity, setItemQuantity] = useState(0)
-   
+
     console.log(itemQuantity)
-    
+
     const addToCart = (product) => {
-        product.quantity=itemQuantity
+        product.quantity = itemQuantity
         let inCart = cartProducts.find(item => item.id === product.id)
         if (!inCart) {
             setCartProducts(cartProducts => [...cartProducts, product])
-            
+
         }
-        console.log(product)
+        
     }
 
     const deleteItem = (product) => {
-        const cartItem = cartProducts.map(item => item.id)
-        console.log(cartItem)
-        console.log(product.id)
+        let singleItem = cartProducts.find(item => item.id === product.id)
+        if(singleItem===product.id){
+            cartProducts.shift(product)        
+            console.log(cartProducts)
+            
+            
+        }
     }
 
     const deleteCartItems = () => {

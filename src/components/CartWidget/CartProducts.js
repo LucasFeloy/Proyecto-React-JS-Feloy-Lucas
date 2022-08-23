@@ -7,10 +7,10 @@ const CartProducts = () => {
 
     const { cartProducts, deleteCartItems, deleteItem } = useContext(CartContext)
 
-    const price = cartProducts.map((product) => product.price*product.quantity)
+    const price = cartProducts.map((product) => product.price * product.quantity)
     const finalPrice = price.reduce((acum, itemPrice) => acum + itemPrice, 0)
-    
-    
+
+
     return (
         <>
             {cartProducts.map((product) => {
@@ -20,15 +20,15 @@ const CartProducts = () => {
                     <div className='CartProducts'>
                         <img src={`/assets/${product.image}`} alt="imagen" />
                         <div className="Detail">
-                            <span>{product.title}</span>
+                            <span key={product.id}>{product.title}</span>
                             <p key={product.id}>${product.price}</p>
                             <div>
                                 <p>TALLE: XL</p>
                                 <p>CANTIDAD:{product.quantity} </p>
-                                <p>TOTAL: ${product.price*product.quantity}</p>
+                                <p>TOTAL: ${product.price * product.quantity}</p>
                             </div>
                             <div>
-                                <button onClick={deleteItem} >ELIMINAR PRODUCTO</button>
+                                <button key={product.id} onClick={deleteItem} >ELIMINAR PRODUCTO</button>
                             </div>
                         </div>
                     </div>
