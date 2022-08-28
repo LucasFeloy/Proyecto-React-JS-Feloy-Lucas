@@ -1,4 +1,4 @@
-import { createContext, useState,useEffect } from "react";
+import { createContext, useState } from "react";
 
 
 const CartContext = createContext()
@@ -6,32 +6,27 @@ const CartContext = createContext()
 const CartProvider = ({ children }) => {
 
     const [cartProducts, setCartProducts] = useState([])
-    const [itemQuantity, setItemQuantity] = useState(0)
-
-    console.log(itemQuantity)
+    const [totalPrice, setTotalPrice] = useState(0)
+    const [totalProducts, setTotalProducts] = useState(0)
 
     const addToCart = (product) => {
-        product.quantity = itemQuantity
+
         let inCart = cartProducts.find(item => item.id === product.id)
+        setTotalProducts(totalProducts +  product.contador)
         if (!inCart) {
+            setTotalPrice(totalPrice + product.price)
             setCartProducts(cartProducts => [...cartProducts, product])
-
-        }
-        
-    }
-
-    const deleteItem = (product) => {
-        let singleItem = cartProducts.find(item => item.id === product.id)
-        if(singleItem===product.id){
-            cartProducts.shift(product)        
-            console.log(cartProducts)
-            
             
         }
+       
     }
+    
+
 
     const deleteCartItems = () => {
         setCartProducts([])
+        setTotalPrice(0)
+        setTotalProducts(0)
     }
 
 
@@ -41,9 +36,10 @@ const CartProvider = ({ children }) => {
         setCartProducts,
         addToCart,
         deleteCartItems,
-        deleteItem,
-        setItemQuantity,
-        itemQuantity
+        totalPrice,
+        setTotalProducts,
+        totalProducts
+ 
     }
 
 

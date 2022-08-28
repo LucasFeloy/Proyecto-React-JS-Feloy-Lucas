@@ -7,6 +7,7 @@ import DetailProduct from './pages/DetailProduct';
 import CategoriesContainer from './components/CategoriesContainer/CategoriesContainer';
 import CartProvider from './context/CartContext';
 import CartProducts from './components/CartWidget/CartProducts';
+import Error from './Error404/Error404';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/item/:id' element={<DetailProduct />} />
         <Route path='/category/:id' element={<CategoriesContainer />} />
         <Route path='/CartWidget/CartProducts' element={<CartProducts/>}/>
+        <Route path='*' element={<Error/>}/>
       </Routes>
 
     </BrowserRouter>

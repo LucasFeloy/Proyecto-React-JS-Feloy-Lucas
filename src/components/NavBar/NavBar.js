@@ -28,8 +28,6 @@ function NavBar() {
                 <div className='divisor'></div>
                 <Link to={`/category/${categories[4]}`} style={{ textDecoration: 'none' }}><li>SERIES</li></Link>
                 <div className='divisor'></div>
-                <li>GUIA DE TALLES</li>
-                <div className='divisor'></div>
                 {cartProducts.length == 0 ? <li></li> : <li><CartWidget /></li>}
                 {cartProducts.length > 0 ? <li>{cartProducts.length}</li> : <li></li>}
             </ul>

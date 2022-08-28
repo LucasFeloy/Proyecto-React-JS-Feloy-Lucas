@@ -5,7 +5,7 @@ import { CartContext } from "../../context/CartContext";
 
 const ItemCount = ({ stock, quantitySelected, detail }) => {
 
-    const { addToCart, setItemQuantity } = useContext(CartContext)
+    const { addToCart} = useContext(CartContext)
     const [contador, setContador] = useState(0);
 
     const addNumber = () => {
@@ -20,10 +20,12 @@ const ItemCount = ({ stock, quantitySelected, detail }) => {
         };
     }
 
+    
+    
     const onAdd = () => {
         quantitySelected(contador)
-        addToCart(detail)
-        setItemQuantity(contador)
+        addToCart({...detail,contador})
+            
     }
 
     

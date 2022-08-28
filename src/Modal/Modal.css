@@ -1,0 +1,33 @@
+.modal{ 
+    padding: 50px;
+    border: solid orange 5px;
+    background-color:rgba(245, 245, 245, 0.847);
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+     
+}
+
+.modal h3{
+    text-shadow: 1px 4px rgba(0, 0, 0, 0.19);;
+}
+
+.modal input{
+   
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 8px 0px black;
+    font-weight: bold;
+}
+
+.modal button{
+    font-weight: bold;
+    border: solid 2px black;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
