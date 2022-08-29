@@ -12,15 +12,18 @@ const CartProvider = ({ children }) => {
     const addToCart = (product) => {
 
         let inCart = cartProducts.find(item => item.id === product.id)
-        setTotalProducts(totalProducts +  product.contador)
+        console.log(product.id) 
+            
         if (!inCart) {
-            setTotalPrice(totalPrice + product.price)
+            setTotalPrice(totalPrice + product.price*product.contador)
             setCartProducts(cartProducts => [...cartProducts, product])
+            setTotalProducts(product.contador)
             
         }
-       
     }
-    
+   
+  
+
 
 
     const deleteCartItems = () => {
@@ -39,7 +42,7 @@ const CartProvider = ({ children }) => {
         totalPrice,
         setTotalProducts,
         totalProducts
- 
+
     }
 
 

@@ -25,7 +25,7 @@ const ItemCount = ({ stock, quantitySelected, detail }) => {
     const onAdd = () => {
         quantitySelected(contador)
         addToCart({...detail,contador})
-            
+                    
     }
 
     
