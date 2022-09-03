@@ -8,20 +8,28 @@ import { collection, addDoc } from 'firebase/firestore';
 
 const CartProducts = () => {
 
-    const { cartProducts, deleteCartItems,  totalPrice, totalProducts } = useContext(CartContext)
+
+    const { setCartProducts, cartProducts, deleteCartItems, deleteItem } = useContext(CartContext)
+
+    const priceItems = cartProducts.map((product) => product.price * product.contador)
+
+    const price = priceItems.reduce((acum, el) => acum + el, 0)
+
     const [showModal, setShowModal] = useState(false)
     const [success, setSuccess] = useState()
+
     const [order, setOrder] = useState({
         items: cartProducts.map((product) => {
             return {
                 id: product.id,
                 title: product.title,
-                price: product.price
+                price: product.price,
+                size: product.waist
             }
 
         }),
         buyer: {},
-        total: totalPrice
+        total: price
     })
 
     const [formData, setFormData] = useState({
@@ -47,6 +55,10 @@ const CartProducts = () => {
         setSuccess(orderDoc.id)
     }
 
+    const closeOrder = () => {
+        setShowModal()
+        
+    }
 
     return (
         <>
@@ -60,11 +72,12 @@ const CartProducts = () => {
                             <span key={product.id}>{product.title}</span>
                             <p >${product.price}</p>
                             <div>
-                                <p>TALLE: XL</p>
-                                <p>CANTIDAD:{totalProducts}</p>
+                                <p>TALLE: {product.waist}</p>
+                                <p>CANTIDAD:{product.contador}</p>
+                                <p>SUBTOTAL:${product.contador * product.price}</p>
                             </div>
                             <div>
-                                <button key={product.id} >ELIMINAR PRODUCTO</button>
+                                <button key={product.id} onClick={() => deleteItem(product.id)} >ELIMINAR PRODUCTO</button>
                             </div>
                         </div>
                     </div>
@@ -73,7 +86,7 @@ const CartProducts = () => {
             })}
             {cartProducts.length > 0 ?
                 <div>
-                    <p className='precio'>PRECIO FINAL=${totalPrice}</p>
+                    <p className='precio'>PRECIO FINAL=${price}</p>
                     <div className='botonCompra'>
                         <button onClick={() => setShowModal(true)} >TERMINAR COMPRA</button>
                         <button onClick={deleteCartItems}>VACIAR CARRITO</button>
@@ -83,7 +96,7 @@ const CartProducts = () => {
             </div>}
             <div className='modal-box'>
                 {showModal &&
-                    <Modal title="INGRESA TUS DATOS PARA FINALIZAR LA COMPRA" close={() => setShowModal()}>
+                    <Modal title="INGRESA TUS DATOS PARA FINALIZAR LA COMPRA" close={closeOrder}>
 
                         {success ? (<><h2>ORDEN GENERADA</h2>
                             <p>{success}</p>
@@ -107,7 +120,7 @@ const CartProducts = () => {
                                     placeholder='Ingrese Email'
                                     value={formData.email}
                                     onChange={handleChange} />
-                                <button type='submit'>ENVIAR</button>
+                                <button onClick={()=>setCartProducts([])} type='submit'>ENVIAR</button>
                             </form>)}
                     </Modal>}
             </div>

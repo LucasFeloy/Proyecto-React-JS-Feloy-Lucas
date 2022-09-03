@@ -48,6 +48,21 @@
     letter-spacing: 1px;
     cursor: pointer;
 }
+.ItemDetail button {
+    font-weight: bold;
+    border: solid 2px black;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 20px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.Detail button.checked {
+    background-color: grey;
+}
 
 .Detail{
     margin: auto;

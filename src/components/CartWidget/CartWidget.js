@@ -9,7 +9,7 @@ const CartWidget = () => {
 
     return (
         <div className="carrito">
-            <Link to="/CartWidget/CartProducts" style={{ textDecoration: 'none' }}><button><img src="assets/carrito.png" /></button></Link>
+            <Link to="/CartWidget/CartProducts" style={{ textDecoration: 'none' }}><button><img src="/assets/carrito.png" /></button></Link>
 
        </div>
     )
